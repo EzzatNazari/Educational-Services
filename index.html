@@ -8,10 +8,21 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap">
 <style>
-body{margin:0}
-a{color:inherit;text-decoration:none}
-a:hover{opacity:.85}
-html{scroll-behavior:smooth}
+.dest{flex:1 1 300px;text-align:right;font-family:inherit;color:#12263F;background:#FFFFFF;border:2px solid #E1E8F0;border-top:6px solid #F2B544;border-radius:16px;padding:28px;cursor:pointer;line-height:1.8}
+.dest:hover{border-color:#F2B544}
+.dest:focus-visible{outline:3px solid #12263F;outline-offset:3px}
+.dest[aria-expanded="true"]{background:#12263F;color:#FFFFFF;border-color:#12263F;border-top-color:#F2B544}
+.dest[aria-expanded="true"] .dest-sub,.dest[aria-expanded="true"] .dest-text{color:#D6E2F0}
+.dest[aria-expanded="true"] .dest-more{color:#F2B544}
+.dest-more{display:block;margin-top:12px;font-weight:800;font-size:16px;color:#12263F}
+.dest-panel{margin-top:24px;background:#FFFFFF;border:2px solid #E1E8F0;border-radius:20px;padding:28px}
+.dest-panel[hidden]{display:none}
+.dest-panel h3{margin:0 0 20px;font-size:28px;font-weight:800;color:#12263F}
+.cg-grid{display:flex;flex-wrap:wrap;gap:20px}
+.cg-card{flex:1 1 320px;background:#F6F8FB;border-radius:16px;padding:24px}
+.cg-card h4{margin:0 0 10px;font-size:21px;font-weight:800;color:#12263F}
+.cg-card ul,.cg-card ol{margin:0;padding:0 22px 0 0;font-size:17px;color:#3B4F68;line-height:1.9}
+.cg-card strong{color:#12263F}
 </style>
 
 </head>
@@ -24,6 +35,8 @@ html{scroll-behavior:smooth}
 <a href="#top" style="font-size:24px;font-weight:800;color:#F2B544">EduBridge</a>
 <nav style="display:flex;flex-wrap:wrap;gap:24px;font-size:17px;font-weight:600">
 <a href="#destinations">مقصدها</a>
+<a href="#services">خدمات</a>
+<a href="#opportunities">فرصت‌ها و بورسیه‌ها</a>
 <a href="#programs">مقاطع تحصیلی</a>
 <a href="#steps">مراحل کار</a>
 <a href="#contact">تماس</a>
@@ -45,24 +58,138 @@ html{scroll-behavior:smooth}
 <section id="destinations" style="background:#F6F8FB">
 <div style="max-width:1120px;margin:0 auto;padding:72px 24px">
 <h2 style="margin:0 0 8px;font-size:36px;font-weight:800">مقصدهای تحصیلی</h2>
-<p style="margin:0 0 32px;font-size:19px;color:#3B4F68">کشور مناسب خود را انتخاب کنید.</p>
+<p style="margin:0 0 32px;font-size:19px;color:#3B4F68">کشور موردنظر را انتخاب کنید تا هزینه‌ها، شرایط و مراحل درخواست را ببینید.</p>
+
 <div style="display:flex;flex-wrap:wrap;gap:24px">
-<div style="flex:1 1 300px;background:#FFFFFF;border-radius:16px;padding:28px;border-top:6px solid #F2B544">
+<button type="button" class="dest" data-target="de" aria-expanded="false" aria-controls="panel-de">
 <div style="font-size:30px;font-weight:800">آلمان</div>
-<div style="font-size:16px;font-weight:600;color:#3B4F68;margin-bottom:12px">Germany</div>
-<p style="margin:0;font-size:18px">انتخاب دانشگاه و رشته، دوره زبان آلمانی و ثبت‌نام برای مقاطع کارشناسی و کارشناسی ارشد.</p>
-</div>
-<div style="flex:1 1 300px;background:#FFFFFF;border-radius:16px;padding:28px;border-top:6px solid #F2B544">
+<div class="dest-sub" style="font-size:16px;font-weight:600;color:#3B4F68;margin-bottom:12px">Germany</div>
+<p class="dest-text" style="margin:0;font-size:18px;color:#12263F">انتخاب دانشگاه و رشته، دوره زبان آلمانی و ثبت‌نام برای مقاطع کارشناسی و کارشناسی ارشد.</p>
+<span class="dest-more">مشاهده جزئیات</span>
+</button>
+<button type="button" class="dest" data-target="fr" aria-expanded="false" aria-controls="panel-fr">
 <div style="font-size:30px;font-weight:800">فرانسه</div>
-<div style="font-size:16px;font-weight:600;color:#3B4F68;margin-bottom:12px">France</div>
-<p style="margin:0;font-size:18px">راهنمایی برای دوره زبان فرانسه و درخواست پذیرش در دانشگاه‌های فرانسه، در مقاطع کارشناسی و کارشناسی ارشد.</p>
-</div>
-<div style="flex:1 1 300px;background:#FFFFFF;border-radius:16px;padding:28px;border-top:6px solid #F2B544">
+<div class="dest-sub" style="font-size:16px;font-weight:600;color:#3B4F68;margin-bottom:12px">France</div>
+<p class="dest-text" style="margin:0;font-size:18px;color:#12263F">راهنمایی برای دوره زبان فرانسه و درخواست پذیرش در دانشگاه‌های فرانسه، در مقاطع کارشناسی و کارشناسی ارشد.</p>
+<span class="dest-more">مشاهده جزئیات</span>
+</button>
+<button type="button" class="dest" data-target="cn" aria-expanded="false" aria-controls="panel-cn">
 <div style="font-size:30px;font-weight:800">چین</div>
-<div style="font-size:16px;font-weight:600;color:#3B4F68;margin-bottom:12px">China</div>
-<p style="margin:0;font-size:18px">دوره زبان چینی و درخواست پذیرش در دانشگاه‌های چین برای کارشناسی و کارشناسی ارشد.</p>
+<div class="dest-sub" style="font-size:16px;font-weight:600;color:#3B4F68;margin-bottom:12px">China</div>
+<p class="dest-text" style="margin:0;font-size:18px;color:#12263F">دوره زبان چینی و درخواست پذیرش در دانشگاه‌های چین برای کارشناسی و کارشناسی ارشد.</p>
+<span class="dest-more">مشاهده جزئیات</span>
+</button>
+</div>
+
+<div class="dest-panel" id="panel-de" hidden>
+<h3>آلمان: هزینه‌ها، شرایط و مراحل</h3>
+<div class="cg-grid">
+<div class="cg-card"><h4>هزینه‌ها</h4><ul>
+<li><strong>شهریه:</strong> در بیشتر دانشگاه‌های دولتی شهریه‌ای نیست. در ایالت بادن‌وورتمبرگ دانشجویان غیراروپایی ۱٬۵۰۰ یورو در هر ترم می‌پردازند. وضعیت هر ایالت را جداگانه بررسی کنید.</li>
+<li><strong>هزینه ترم:</strong> حدود ۱۰۰ تا ۴۰۰ یورو در هر ترم برای خدمات دانشجویی و اداری.</li>
+<li><strong>هزینه درخواست:</strong> uni-assist ۷۵ یورو برای اولین رشته و ۳۰ یورو برای هر رشته اضافه در همان ترم. بعضی دانشگاه‌ها مستقیم می‌پذیرند و هزینه جدا دارند.</li>
+<li><strong>ویزا:</strong> ۷۵ یورو، غیرقابل بازگشت.</li>
+<li><strong>حساب مسدودشده:</strong> برای پذیرفته‌شدگان ۹۹۲ یورو در ماه (۱۱٬۹۰۴ یورو برای یک سال). قبل از پذیرش، و برای دوره زبان غیر آمادگی دانشگاهی، ۱٬۰۹۱ یورو در ماه.</li>
+<li><strong>بیمه درمانی:</strong> الزامی است.</li>
+<li><strong>دوره زبان:</strong> قیمت را مؤسسه آموزشی تعیین می‌کند: [قیمت].</li>
+</ul></div>
+<div class="cg-card"><h4>شرایط هر مقطع</h4><ul>
+<li><strong>دوره زبان:</strong> برای ویزای دوره زبان باید ۱٬۰۹۱ یورو در ماه را اثبات کنید.</li>
+<li><strong>کارشناسی:</strong> مدرک پایان دبیرستان شما باید در آلمان معتبر شناخته شود (پایگاه پذیرش DAAD). در غیر این صورت معمولاً باید Studienkolleg بگذرانید.</li>
+<li><strong>کارشناسی ارشد:</strong> مدرک کارشناسی مرتبط و مدارک موردنظر هر دانشگاه، مثلاً رزومه و انگیزه‌نامه.</li>
+<li><strong>زبان آلمانی:</strong> برای برنامه‌های آلمانی‌زبان DSH-2، TestDaF (۴ در همه بخش‌ها) یا telc Deutsch C1 Hochschule.</li>
+<li><strong>زبان انگلیسی:</strong> برای برنامه‌های انگلیسی‌زبان معمولاً IELTS یا TOEFL. نمره موردنیاز را هر برنامه مشخص می‌کند.</li>
+</ul></div>
+<div class="cg-card"><h4>مراحل درخواست</h4><ol>
+<li>انتخاب برنامه و بررسی شرایط در پایگاه DAAD</li>
+<li>گذراندن آزمون زبان</li>
+<li>درخواست از طریق uni-assist یا پورتال خود دانشگاه</li>
+<li>دریافت نامه پذیرش</li>
+<li>باز کردن حساب مسدودشده و تهیه بیمه</li>
+<li>درخواست ویزای تحصیلی در سفارت</li>
+<li>ثبت‌نام در دانشگاه پس از ورود</li>
+</ol></div>
+<div class="cg-card"><h4>نکات مهم</h4><ul>
+<li>برای ویزای تحصیلی معمولاً نامه پذیرش بدون‌شرط لازم است.</li>
+<li>ویزای تحصیلی اجازه کار محدود می‌دهد (حدود ۱۲۰ روز کامل یا ۲۴۰ نیم‌روز در سال).</li>
+<li>رسیدگی به ویزا می‌تواند تا چند هفته طول بکشد، زود شروع کنید.</li>
+<li>مهلت‌ها برای هر دانشگاه فرق می‌کند، مهلت را از صفحه خود دانشگاه بردارید.</li>
+</ul></div>
 </div>
 </div>
+
+<div class="dest-panel" id="panel-fr" hidden>
+<h3>فرانسه: هزینه‌ها، شرایط و مراحل</h3>
+<div class="cg-grid">
+<div class="cg-card"><h4>هزینه‌ها</h4><ul>
+<li><strong>شهریه سالانه (۲۰۲۶–۲۰۲۷):</strong> برای بیشتر دانشجویان غیر اتحادیه اروپا ۲٬۸۹۵ یورو در کارشناسی و ۳٬۹۴۱ یورو در ارشد. بعضی دانشگاه‌ها با هزینه کتابخانه کمی بیشتر اعلام می‌کنند.</li>
+<li><strong>معافیت:</strong> معافیت از شهریه محدود شده است، روی آن حساب نکنید.</li>
+<li><strong>CVEC (مشارکت دانشجویی):</strong> حدود ۱۰۵ یورو در سال.</li>
+<li><strong>ویزا:</strong> ۵۰ یورو در کشورهای دارای روش Études en France و ۹۹ یورو در بقیه.</li>
+<li><strong>منابع مالی:</strong> حداقل ۶۱۵ یورو در ماه.</li>
+<li><strong>آزمون زبان (TCF/DELF):</strong> هزینه بسته به مرکز فرق می‌کند: [قیمت].</li>
+<li><strong>دوره زبان:</strong> [قیمت].</li>
+</ul></div>
+<div class="cg-card"><h4>شرایط هر مقطع</h4><ul>
+<li><strong>دوره زبان:</strong> شرایط ویزا و هزینه به نوع و مدت دوره بستگی دارد، از مؤسسه بپرسید.</li>
+<li><strong>کارشناسی (Licence):</strong> مدرک پایان دبیرستان. برای برنامه‌های فرانسوی‌زبان معمولاً حداقل سطح B2 فرانسه.</li>
+<li><strong>کارشناسی ارشد:</strong> مدرک کارشناسی و مدارک موردنظر برنامه.</li>
+<li><strong>زبان:</strong> TCF، DELF یا DALF برای برنامه‌های فرانسوی‌زبان. اگر برنامه سطحی ننوشته باشد، معمولاً B2 انتظار می‌رود. برنامه‌های انگلیسی‌زبان مدرک انگلیسی می‌خواهند.</li>
+</ul></div>
+<div class="cg-card"><h4>مراحل درخواست</h4><ol>
+<li>انتخاب برنامه</li>
+<li>رزرو آزمون زبان از چند ماه قبل</li>
+<li>درخواست از طریق Études en France (Campus France) اگر کشور شما عضو این روش است، در غیر این صورت مستقیم به دانشگاه</li>
+<li>مصاحبه، در صورت لزوم</li>
+<li>دریافت پذیرش</li>
+<li>درخواست ویزا از طریق France-Visas</li>
+<li>پرداخت CVEC و ثبت‌نام</li>
+</ol></div>
+<div class="cg-card"><h4>نکات مهم</h4><ul>
+<li>شهریه‌های جدید از سال ۲۰۲۶–۲۰۲۷ اجرا می‌شود و دانشگاه‌ها هنوز جزئیات را اعلام می‌کنند، حتماً شهریه همان دانشگاه را بپرسید.</li>
+<li>پذیرش دانشگاه با صدور ویزا یکی نیست، ویزا را کنسولگری صادر می‌کند.</li>
+<li>زمان بازشدن درخواست‌ها هر سال فرق می‌کند. مثلاً برای سال ۲۰۲۷–۲۰۲۸ ثبت درخواست در برخی دانشگاه‌ها از ۱ اکتبر ۲۰۲۶ شروع می‌شود.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="dest-panel" id="panel-cn" hidden>
+<h3>چین: هزینه‌ها، شرایط و مراحل</h3>
+<div class="cg-grid">
+<div class="cg-card"><h4>هزینه‌ها</h4><ul>
+<li><strong>شهریه کارشناسی:</strong> در بسیاری از دانشگاه‌ها برای برنامه‌های چینی‌زبان حدود ۱۶٬۰۰۰ تا ۳۰٬۰۰۰ یوان در سال. پزشکی و برنامه‌های خاص خیلی بیشتر است (مثلاً ۴۵٬۰۰۰ یوان).</li>
+<li><strong>شهریه ارشد:</strong> بسته به دانشگاه از حدود ۲۱٬۰۰۰ تا ۵۴٬۰۰۰ یوان در سال.</li>
+<li><strong>دوره زبان چینی:</strong> مثلاً ۷٬۰۰۰ یوان در هر ترم در یک دانشگاه. دانشگاه‌های دیگر متفاوت‌اند: [قیمت].</li>
+<li><strong>هزینه درخواست:</strong> حدود ۴۰۰ تا ۸۰۰ یوان، غیرقابل بازگشت.</li>
+<li><strong>بیمه اجباری:</strong> حدود ۸۰۰ یوان در سال.</li>
+<li><strong>خوابگاه:</strong> از حدود ۵۰۰ یوان در ماه (اتاق دو نفره) تا چند هزار یوان در هر ترم بسته به دانشگاه.</li>
+<li><strong>هزینه زندگی:</strong> حدود ۱٬۰۰۰ تا ۳٬۰۰۰ یوان در ماه بسته به شهر.</li>
+<li><strong>معاینه پزشکی و کارت اقامت:</strong> هزینه جدا دارد.</li>
+</ul></div>
+<div class="cg-card"><h4>شرایط هر مقطع</h4><ul>
+<li><strong>دوره زبان:</strong> برنامه غیرمدرکی. ویزای X2 برای کمتر از ۶ ماه و X1 برای بیشتر از ۶ ماه.</li>
+<li><strong>کارشناسی:</strong> مدرک پایان دبیرستان، سلامت جسمی و عدم شهروندی چین. برای برنامه چینی‌زبان معمولاً HSK 4. بعضی دانشگاه‌ها آزمون ورودی هم می‌گیرند.</li>
+<li><strong>کارشناسی ارشد:</strong> مدرک کارشناسی. برای برنامه چینی‌زبان معمولاً HSK 5. بعضی دانشگاه‌ها سقف سنی دارند (مثلاً زیر ۳۵ سال).</li>
+<li><strong>مدارک رایج:</strong> گذرنامه، مدارک و ریز نمرات تصدیق‌شده، فرم معاینه پزشکی، گواهی عدم سوءپیشینه و مدرک تمکن مالی. برای ارشد گاهی طرح تحصیلی و توصیه‌نامه.</li>
+</ul></div>
+<div class="cg-card"><h4>مراحل درخواست</h4><ol>
+<li>انتخاب دانشگاه، برنامه و بورسیه</li>
+<li>درخواست آنلاین در سامانه دانشگاه (یا CUCAS/CSC برای بورسیه)</li>
+<li>دریافت نامه پذیرش و فرم JW201 یا JW202</li>
+<li>درخواست ویزای X1 همراه با نتیجه معاینه پزشکی</li>
+<li>ورود و ثبت‌نام در دانشگاه</li>
+<li>درخواست کارت اقامت در ۳۰ روز اول</li>
+</ol></div>
+<div class="cg-card"><h4>نکات مهم</h4><ul>
+<li>سال تحصیلی معمولاً در سپتامبر شروع می‌شود و بعضی دانشگاه‌ها ورودی‌های دیگر هم دارند.</li>
+<li>برای ثبت‌نام باید ویزای دانشجویی (X1 یا X2) داشته باشید، ویزاهای دیگر پذیرفته نمی‌شود.</li>
+<li>شرایط و مبلغ‌ها بین دانشگاه‌ها خیلی فرق می‌کند، سایت همان دانشگاه معتبر است.</li>
+<li>بورسیه دولتی چین (CSC) می‌تواند شهریه، خوابگاه و مقرری را پوشش دهد.</li>
+</ul></div>
+</div>
+</div>
+
+<p style="margin:24px 0 0;font-size:15px;color:#3B4F68">آخرین بررسی: ۲۲ نوامبر ۲۰۲۶. این اطلاعات راهنمای کلی است و جایگزین سایت رسمی دانشگاه، سفارت یا Campus France نیست. پذیرش و ویزا تضمین نمی‌شود.</p>
 </div>
 </section>
 
@@ -83,6 +210,89 @@ html{scroll-behavior:smooth}
 <p style="margin:0;font-size:18px;color:#D6E2F0">انتخاب برنامه تحصیلی مناسب سوابق شما و راهنمایی برای ارسال درخواست.</p>
 </div>
 </div>
+</div>
+</section>
+
+<section id="services" style="background:#F6F8FB">
+<div style="max-width:1120px;margin:0 auto;padding:72px 24px">
+<h2 style="margin:0 0 8px;font-size:36px;font-weight:800">خدمات و هزینه‌ها</h2>
+<p style="margin:0 0 32px;font-size:19px;color:#3B4F68">هزینه هر خدمت از ابتدا مشخص است.</p>
+<div style="display:flex;flex-wrap:wrap;gap:24px">
+
+<div style="flex:1 1 300px;background:#FFFFFF;border-radius:16px;padding:28px;border:2px solid #E1E8F0;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:26px;font-weight:800">جلسه مشاوره</div>
+<p style="margin:0;font-size:18px;color:#3B4F68">بررسی سوابق شما و معرفی کشور، دانشگاه و رشته‌های مناسب.</p>
+<div style="font-size:28px;font-weight:800;color:#12263F;margin-top:auto">[قیمت] یورو</div>
+</div>
+
+<div style="flex:1 1 300px;background:#FFFFFF;border-radius:16px;padding:28px;border:2px solid #F2B544;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:26px;font-weight:800">بسته درخواست پذیرش</div>
+<p style="margin:0;font-size:18px;color:#3B4F68">انتخاب برنامه، آماده‌سازی مدارک، بررسی انگیزه‌نامه و رزومه و پیگیری مهلت‌ها.</p>
+<div style="font-size:28px;font-weight:800;color:#12263F;margin-top:auto">[قیمت] یورو</div>
+</div>
+
+<div style="flex:1 1 300px;background:#FFFFFF;border-radius:16px;padding:28px;border:2px solid #E1E8F0;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:26px;font-weight:800">راهنمای بعد از پذیرش</div>
+<p style="margin:0;font-size:18px;color:#3B4F68">راهنمایی برای مسکن، بیمه، نوبت ویزا و آمادگی برای ورود.</p>
+<div style="font-size:28px;font-weight:800;color:#12263F;margin-top:auto">[قیمت] یورو</div>
+</div>
+
+</div>
+<p style="margin:28px 0 0;font-size:15px;color:#3B4F68">هزینه ثبت‌نام دانشگاه‌ها و سفارت جدا از هزینه خدمات ماست. پذیرش و ویزا تضمین نمی‌شود.</p>
+</div>
+</section>
+
+<section id="opportunities">
+<div style="max-width:1120px;margin:0 auto;padding:72px 24px">
+<h2 style="margin:0 0 8px;font-size:36px;font-weight:800">بورسیه‌ها و فرصت‌های تحصیلی</h2>
+<p style="margin:0 0 32px;font-size:19px;color:#3B4F68">لینک‌های رسمی برای درخواست مستقیم. همه این لینک‌ها رایگان هستند و شما می‌توانید خودتان از آن‌ها استفاده کنید.</p>
+<div style="display:flex;flex-wrap:wrap;gap:24px">
+
+<div style="flex:1 1 320px;background:#F6F8FB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;font-weight:800;color:#12263F;background:#F2B544;align-self:flex-start;padding:2px 12px;border-radius:20px">آلمان</div>
+<div style="font-size:22px;font-weight:800">پایگاه بورسیه DAAD</div>
+<p style="margin:0;font-size:17px;color:#3B4F68">جستجوی بورسیه‌های دانشجویی و پژوهشی برای تحصیل در آلمان.</p>
+<a href="https://www.daad.de/en/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;background:#12263F;color:#FFFFFF;font-weight:600;font-size:17px;padding:10px 20px;border-radius:10px;align-self:flex-start">مشاهده و درخواست</a>
+</div>
+
+<div style="flex:1 1 320px;background:#F6F8FB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;font-weight:800;color:#12263F;background:#F2B544;align-self:flex-start;padding:2px 12px;border-radius:20px">آلمان</div>
+<div style="font-size:22px;font-weight:800">uni-assist (درخواست پذیرش)</div>
+<p style="margin:0;font-size:17px;color:#3B4F68">سامانه رسمی بررسی مدارک و ارسال درخواست برای بسیاری از دانشگاه‌های آلمان.</p>
+<a href="https://www.uni-assist.de/en/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;background:#12263F;color:#FFFFFF;font-weight:600;font-size:17px;padding:10px 20px;border-radius:10px;align-self:flex-start">مشاهده و درخواست</a>
+</div>
+
+<div style="flex:1 1 320px;background:#F6F8FB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;font-weight:800;color:#12263F;background:#F2B544;align-self:flex-start;padding:2px 12px;border-radius:20px">آلمان</div>
+<div style="font-size:22px;font-weight:800">Deutschlandstipendium</div>
+<p style="margin:0;font-size:17px;color:#3B4F68">بورسیه شایستگی برای دانشجویان در دانشگاه‌های آلمان، با درخواست از طریق خود دانشگاه.</p>
+<a href="https://www.deutschlandstipendium.de/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;background:#12263F;color:#FFFFFF;font-weight:600;font-size:17px;padding:10px 20px;border-radius:10px;align-self:flex-start">مشاهده و درخواست</a>
+</div>
+
+<div style="flex:1 1 320px;background:#F6F8FB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;font-weight:800;color:#12263F;background:#F2B544;align-self:flex-start;padding:2px 12px;border-radius:20px">فرانسه</div>
+<div style="font-size:22px;font-weight:800">Campus France</div>
+<p style="margin:0;font-size:17px;color:#3B4F68">اطلاعات رسمی درباره دانشگاه‌ها، رشته‌ها و بورسیه‌های فرانسه.</p>
+<a href="https://www.campusfrance.org/en" target="_blank" rel="noopener noreferrer" style="margin-top:auto;background:#12263F;color:#FFFFFF;font-weight:600;font-size:17px;padding:10px 20px;border-radius:10px;align-self:flex-start">مشاهده و درخواست</a>
+</div>
+
+<div style="flex:1 1 320px;background:#F6F8FB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;font-weight:800;color:#12263F;background:#F2B544;align-self:flex-start;padding:2px 12px;border-radius:20px">چین</div>
+<div style="font-size:22px;font-weight:800">بورسیه دولت چین (CSC)</div>
+<p style="margin:0;font-size:17px;color:#3B4F68">اطلاعات رسمی بورسیه‌های دولتی چین برای دانشجویان بین‌المللی.</p>
+<a href="https://www.campuschina.org/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;background:#12263F;color:#FFFFFF;font-weight:600;font-size:17px;padding:10px 20px;border-radius:10px;align-self:flex-start">مشاهده و درخواست</a>
+</div>
+
+<div style="flex:1 1 320px;background:#F6F8FB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;font-weight:800;color:#12263F;background:#F2B544;align-self:flex-start;padding:2px 12px;border-radius:20px">چین</div>
+<div style="font-size:22px;font-weight:800">CUCAS</div>
+<p style="margin:0;font-size:17px;color:#3B4F68">پلتفرم درخواست دوره زبان و مقاطع تحصیلی در دانشگاه‌های چین.</p>
+<div style="font-size:15px;color:#3B4F68">مهلت: [تاریخ]</div>
+<a href="https://www.cucas.cn/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;background:#12263F;color:#FFFFFF;font-weight:600;font-size:17px;padding:10px 20px;border-radius:10px;align-self:flex-start">مشاهده و درخواست</a>
+</div>
+
+</div>
+<p style="margin:28px 0 0;font-size:15px;color:#3B4F68">شرایط و مهلت‌ها ممکن است تغییر کنند. پیش از درخواست، همیشه سایت رسمی را بررسی کنید.</p>
 </div>
 </section>
 
@@ -119,6 +329,27 @@ html{scroll-behavior:smooth}
 </footer>
 
 </div>
-
+<a href="https://wa.me/4915907938792?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D9%BE%D8%B0%DB%8C%D8%B1%D8%B4%20%D8%AA%D8%AD%D8%B5%DB%8C%D9%84%DB%8C%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D8%A8%DA%AF%DB%8C%D8%B1%D9%85." target="_blank" rel="noopener noreferrer" aria-label="ارتباط در واتساپ" style="position:fixed;left:20px;bottom:20px;z-index:50;background:#075E54;color:#FFFFFF;font-family:'Vazirmatn',Tahoma,sans-serif;font-weight:800;font-size:1８px;padding:14px 22px;border-radius:40px;box-shadow:0 4px 14px rgba(0,0,0,.3)">پیام در واتساپ</a>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.dest');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-target');
+      var wasOpen = btn.getAttribute('aria-expanded') === 'true';
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        document.getElementById('panel-' + b.getAttribute('data-target')).hidden = true;
+      });
+      if (!wasOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        var panel = document.getElementById('panel-' + id);
+        panel.hidden = false;
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
